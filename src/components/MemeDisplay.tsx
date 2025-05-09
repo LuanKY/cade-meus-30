@@ -1,4 +1,5 @@
 import React from 'react';
+import hungryImg from '../assets/hungry.jpg';
 
 export const MemeDisplay: React.FC = () => {
   return (
@@ -8,8 +9,8 @@ export const MemeDisplay: React.FC = () => {
       </h3>
       <div className="relative pb-[56.25%]">
         <img
-          src="https://images.pexels.com/photos/7149165/pexels-photo-7149165.jpeg"
-          alt="Pessoa esperando pacientemente"
+          src={hungryImg}
+          alt="Pessoa esperando com fome"
           className="absolute inset-0 w-full h-full object-cover rounded"
         />
       </div>
