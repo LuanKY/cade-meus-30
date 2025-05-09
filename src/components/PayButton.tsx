@@ -4,10 +4,25 @@ import { ArrowRightIcon, CopyIcon, CheckIcon } from 'lucide-react';
 export const PayButton: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [showPix, setShowPix] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
+  const [message, setMessage] = useState('');
   const [copied, setCopied] = useState(false);
   const pixKey = 'kyrtinem@gmail.com';
 
   const handleClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+
+    if (newCount === 1) {
+      setMessage('Clicando não resolve, precisa pagar mesmo!');
+    } else if (newCount === 3) {
+      setMessage('Insistindo, né? Transfere logo esses R$30!');
+    } else if (newCount === 5) {
+      setMessage('Ok, agora você está só me evitando...');
+    } else if (newCount >= 10) {
+      setMessage('Imagine se você usasse essa energia para fazer um PIX!');
+    }
+
     setShowPix(true);
   };
 
@@ -41,7 +56,11 @@ export const PayButton: React.FC = () => {
           }`}
         ></span>
       </button>
-      
+
+      {message && (
+        <p className="text-slate-700 mt-4 text-lg animate-bounce">{message}</p>
+      )}
+
       {showPix && (
         <div className="mt-6 bg-white p-6 rounded-xl shadow-lg animate-fadeIn">
           <h3 className="text-xl font-semibold text-slate-800 mb-3">Chave Pix:</h3>

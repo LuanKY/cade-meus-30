@@ -9,7 +9,7 @@ export const ReminderText: React.FC = () => {
         <h3 className="text-lg font-semibold text-slate-700">Só lembrando...</h3>
       </div>
       <p className="text-slate-700 text-xl">
-        Você já gastou mais que isso no iFood essa semana... só dizendo 🤷
+        Você já gastou mais que isso no Uber essa semana... só dizendo 🤷
       </p>
     </div>
   );
